@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>ConShare</title>
+
+<!-- links com path iniciando com / para que esta pagina abra corretamente pelo spring boot  -->
+<link href="/resources/assets/img_home/icon-navbar.png" rel="icon">
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/pricing.css" rel="stylesheet">
+<link href="/resources/css/styles.css" rel="stylesheet">
+
+
+</head>
+
+<body >
+
+
+	<!-- inicio do HEADER -->
+
+	<div th:replace="fragments/header-navbar :: header"></div>
+	<!-- fim do HEADER -->
+
+
+
+	<!-- inicio do conteudo da pagina -->
+	<!-- <div class="container"> -->
+	<div>
+
+		<div layout:fragment="body" ></div>
+
+
+	</div>
+	<!-- fim do conteudo da pagina -->
+
+	<!-- inicio do FOOTER -->
+	<div th:replace="fragments/footer :: footer"></div>
+	<!-- fim do FOOTER -->
+
+
+
+
+
+	<!-- inicio dos scripts com path iniciando com / para que esta pagina abra corretamente pelo spring boot  -->
+	<script src="/resources/js/jquery/jquery-3.4.1.slim.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="/resources/js/jquery/jquery-slim.min.js"><\/script>')
+	</script>
+	<script src="/resources/js/popper/popper.min.js"></script>
+	<script src="/resources/js/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+	
+	
+
+</body>
+
+</html>

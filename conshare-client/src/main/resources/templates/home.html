@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<hr id="border">
+
+		<div class="title-main-home">
+			<h1 class="text-left text-dark">
+				<p>Transformamos</p>
+				<p>a maneira</p>
+				<p>de se compartilhar</p>
+				<p>o conhecimento.</p>
+
+
+			</h1>
+
+		</div>
+
+		<img src="/resources/assets/img_home/people-coffee.jpg"
+			class="img-fluid" alt="Responsive image" id="img-home-pos-one">
+
+		<div class="row">
+
+			<div class="col">
+				<h2 class="text-left" id="title-sobre-nos-home">Sobre nós</h2>
+				<h3 class=" text-left text-dark" >
+					<p>O Conhare chegou para facilitar seus estudos e</p>
+					<p>pesquisas academicas, unindo todas as ferramentas</p>
+					<p>mais utilizadas pelos estudantes de hoje em um</p>
+					<p>unico lugar com uma interface muito facil de utilizar.</p>
+				</h3>
+
+
+
+			</div>
+
+			<div class="col">
+
+				<img src="/resources/assets/img_home/team.jpg" class="img-fluid"
+					alt="Responsive image" id="img-home-pos-two">
+
+			</div>
+
+
+		</div>
+
+
+
+		<h5 class=" text-primary">O que a conshare é capaz de fazer?</h5>
+		<div class="row">
+
+
+			<div class="col">
+
+				<div class="card" style="width: 25rem;" id="card-design-home">
+
+					<div class="card-body">
+						<p class="card-text">Use o filtro de busca para encontrar sua
+							resposta ainda mais rapido. om o nosso filtro de busca você
+							encontrá de forma mais rapida e sem tanto esforço os seus
+							resultados esperados.</p>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="col">
+				<div class="card" style="width: 25rem;" id="card-design-home">
+
+					<div class="card-body" id="altermargin">
+						<p class="card-text">Faça perguntas para toda a comunidade
+							ConShare, Atraves do forum você pode fazer perguntas e tambem
+							obter respostas de todos os usuarios do software de uma forma
+							extremamente rápida.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col">
+				<div class="card" style="width: 25rem;" id="card-design-home">
+
+					<div class="card-body">
+						<p class="card-text">Inicie chats com professroes para tirar
+							dúvidas. Você pode iniciar chats com professores para exclarecer
+							duvidas ou ate mesmo iniiar uma video chamada para aulas
+							particulares.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="text-end-home" class="text-left text-dark">
+
+			<p>E ai, curtiu essa nova ideia</p>
+			<p>que tal experimentar agora mesmo, clique no botão abaixo.</p>
+
+
+			<a th:href="@{/access/register_user}"
+				class="btn btn-outline-secondary btn-lg" role="button"
+				aria-pressed="true" id="btn-end-home">Começar a usar</a>
+
+
+		</div>
+
+
+	</div>
+</body>
+</html>

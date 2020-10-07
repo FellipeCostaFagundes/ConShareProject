@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<div id="layoutAuthentication">
+			<div id="layoutAuthentication_content">
+
+				<hr>
+				<main>
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-7">
+								<div class="card shadow-lg border-dark rounded-lg mt-2">
+									<div class="card-header mt-0">
+										<h3 class="text-center font-weight-dark mt-0">Crie sua
+											conta!</h3>
+
+									</div>
+									<div class="card-body">
+										<form>
+											<div class="form-row">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label class="big mb-2" for="inputFirstName">Nome</label><input
+															class="form-control py-4" id="inputFirstName" type="text"
+															placeholder="Insira seu nome" />
+													</div>
+												</div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="big mb-2" for="inputLastName">Sobrenome</label><input
+															class="form-control py-4" id="inputLastName" type="text"
+															placeholder="Insira o seu sobrenome" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="big mb-2" for="inputEmailAddress">Email</label><input
+													class="form-control py-4" id="inputEmailAddress"
+													type="email" aria-describedby="emailHelp"
+													placeholder="Insira o endereço de email" />
+											</div>
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputPassword">Senha</label><input
+															class="form-control py-4" id="inputPassword"
+															type="password" placeholder="Insira a senha" />
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputConfirmPassword">Confirme
+															a senha</label><input class="form-control py-4"
+															id="inputConfirmPassword" type="password"
+															placeholder="Confirme a senha" />
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="card-footer text-center">
+										<div class="small">
+											<a th:href="@{/access/login}">Já possui uma conta? Faça o
+												login</a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</main>
+
+			</div>
+
+
+		</div>
+
+		<div class="text-center">
+			<a href="modal" class="btn btn-outline-secondary btn-lg mt-4"
+				role="button" data-toggle="modal" data-target="#modal"
+				aria-pressed="true" id="btn-pos-register-user-access">Avançar</a>
+
+
+
+			<div class="modal" tabindex="-1" id="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title text-center" id = "modal-title">Escolha uma Opção</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<a th:href="@{/access/register_teacher}"
+								class="btn btn-outline-secondary btn-lg mt-4" role="button"
+								aria-pressed="true" id="btn-pos-register-user-access">Eu sou
+								um professor</a> <a th:href="@{/access/register_student}"
+								class="btn btn-outline-secondary btn-lg mt-4" role="button"
+								aria-pressed="true" id="btn-pos-register-user-access">Eu sou
+								um aluno</a>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+</body>
+</html>

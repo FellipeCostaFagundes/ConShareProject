@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Editar Questoes</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<h1 id="titlepagescollavoration">Editar Perguntas</h1>
+
+		<div class="border border-white mt-4">
+
+
+			<div class="row">
+				<div class="col-4">
+					<h2 id="text-title-add-question">Titulo</h2>
+				</div>
+				<div class="col-8">
+
+					<div class="col-sm-9" th:text="${questions.titulo}">Titulo</div>
+
+				</div>
+
+			</div>
+
+			<hr>
+
+
+			<div class="row">
+				<div class="col-4">
+					<h2 id="text-title-add-question">Genero</h2>
+				</div>
+				<div class="col-8">
+
+
+					 <div class="col-sm-9" th:text="${questions.categoria}">Genero</div>
+				</div>
+
+			</div>
+
+			<hr>
+
+
+			<div class="row">
+				<div class="col-4">
+					<h2 id="text-title-add-question">Descriçao</h2>
+				</div>
+				<div class="col-8">
+
+
+
+					<div class="col-sm-9" th:text="${questions.descricao}">Genero</div>
+				</div>
+
+
+
+			</div>
+
+
+
+		</div>
+
+		<div class="text-center">
+		
+
+			 <a th:href="@{/question/edit_question/{id} (id=${questions.id})}"
+				class="btn btn-outline-secondary btn-lg mt-4 col-10">Editar Questoes
+				</a> 
+
+		</div>
+
+
+	</div>
+
+</body>
+</html>

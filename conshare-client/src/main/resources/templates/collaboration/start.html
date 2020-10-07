@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>startCollaboration</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<img src="/resources/assets/img_collaboration/lamp.jpg"
+			class="img-fluid mt-4 " alt="Responsive image">
+
+		<div id="title-start-collaboration">O que voce esta procurando?</div>
+
+		<form class="form-inline my-2 my-lg-8">
+
+			<input class="form-control mr-sm-2" type="search"
+				placeholder="Ex:forma de bascara ou em que ano a inglaterra foi descoberta?"
+				aria-label="Search" id="seach-bar-start-collaboration"> <a
+				th:href="@{/access/register_student}"
+				class="btn btn-outline-danger btn-md" role="button"
+				aria-pressed="true" id="btn-search-start-collaboration">Buscar</a>
+		</form>
+
+
+
+		<div class="text-center">
+			<h3 id= "title-option-start-collaboration">Que tal uma Ajuda? Deixamos abaixo algumas opçoes para você achar o que precisa</h3>
+		</div>
+
+		<div class="row">
+			<div class=col>
+				<div class="zoom">
+					<a th:href="@{/collaboration/frequenty_question}"> <img
+						src="/resources/assets/img_collaboration/icons-perguntas-frequentes.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+
+					</a>
+					<h4 id="text-icon-start-collaboration">Perguntas frequentes</h4>
+
+
+
+
+				</div>
+
+
+
+
+			</div>
+
+			<div class=col>
+				<div class="zoom">
+					<a th:href="@{/collaboration/online_teachers}"> <img
+						src="/resources/assets/img_collaboration/icons-professor.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+					</a>
+					<h4 id="text-icon-start-collaboration">Professores on-line</h4>
+
+				</div>
+			</div>
+
+
+
+			<div class=col>
+				<div class="zoom">
+					<a th:href="@{/collaboration/best_rate_question}"> <img
+						src="/resources/assets/img_collaboration/icons-classificação.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+					</a>
+					<h4 id="text-icon-start-collaboration">Perguntas mais bem
+						avaliadas</h4>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="zoom">
+					<a th:href="@{/collaboration/recomended_doc}"> <img
+						src="/resources/assets/img_collaboration/icons-documento.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+					</a>
+					<h4 id="text-icon-start-collaboration">Documentos recomendados</h4>
+				</div>
+
+			</div>
+
+
+			<div class="col">
+
+				<div class="zoom">
+
+
+					<a th:href="@{/question/add_question}"> <img
+						src="/resources/assets/img_collaboration/icons-comentar-debate.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+					</a>
+
+					<h4 id="text-icon-start-collaboration">Adicionar duvidas</h4>
+
+				</div>
+
+			</div>
+
+
+			<div class="col">
+				<div class="zoom">
+					<img
+						src="/resources/assets/img_collaboration/icons-estudando-on-line.png"
+						class="img-fluid mt-6 " alt="Responsive image"
+						id="icon-pos-start-collaboration">
+
+					<h4 id="text-icon-start-collaboration">Criar Salas
+						particulares</h4>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+
+
+	</div>
+
+
+
+
+</body>
+</html>

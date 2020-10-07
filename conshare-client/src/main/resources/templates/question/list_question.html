@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Listar questoes</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+
+
+		<img src="/resources/assets/img_question/questionMark.jpg"
+			class="img-fluid mt-4 " alt="Responsive image">
+
+
+		<nav class="navbar navbar-light" id="navbar-listquestion">
+			<a class="navbar-brand">Navbar</a>
+			<form class="form-inline">
+				<input class="form-control ml-sm-8" type="search"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</nav>
+
+		<div th:each="questions : ${questions}">
+
+
+			<div class="card mt-4" style="width: 50rem; height: 10rem">
+				<div class="card-body">
+
+					<div class="row">
+						<div class="col-10">
+							<h5 th:text="*{questions.titulo}" id="title-card-listquestion"
+								class="card-title">Titulo ref</h5>
+
+							<p th:text="*{questions.descricao}" class="card-text">Some
+								quick example text to build on the card title and make up the
+								bulk of the card's content.</p>
+
+						</div>
+						<div class="col-2">
+							<a href="modal" class="btn btn-outline-danger btn-lg mt-2"
+								role="button" data-toggle="modal" data-target="#exampleModal"
+								aria-pressed="true">Respostas</a> 
+								
+								<a
+								  th:href="@{/question/detail-question/{id} (id=${questions.id})}"
+								class="btn btn-outline-danger btn-lg mt-2">Editar</a> 
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<!-- Modal -->
+		<div class="modal fade " id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div
+				class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+				<div class="modal-content  modal-xl">
+
+					<div class="modal-body modal-dialog modal-dialog-scrollable">
+
+						<div th:each="question : ${questions}">
+
+							<h5 th:text="*{question.titulo}" id="title-card-listquestion"
+								class="card-title">Titulo ref</h5>
+
+							<p th:text="*{question.descricao}" class="card-text">Some
+								quick example text to build on the card title and make up the
+								bulk of the card's content.</p>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Adicionar
+							Resposta</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>

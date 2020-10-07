@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Adicionar Questoes</title>
+
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<h1 id="titlepagescollavoration">Adicionar Perguntas</h1>
+
+
+
+		<div>
+
+			<form th:action="@{/question/create}" method="POST"
+				th:object="${duvida}">
+
+			<div class="row">
+				<div class="col-4">
+
+
+					<div class="form-group">
+						<h2 id="text-title-add-question">Titulo:</h2>
+					</div>
+				</div>
+				<div class="col-8">
+					<input type="text" id="design-imput-add-question"
+						class="form-control "
+						placeholder="Ex: Como fazer dividir numeros com vírgula"
+						th:field="${duvida.titulo}" />
+
+				</div>
+
+			</div>
+
+			<hr>
+
+
+			<div class="row">
+				<div class="col-4">
+					<h2 id="text-title-add-question">Genero:</h2>
+				</div>
+				<div class="col-8">
+
+					<input type="text" id="design-imput-add-question"
+						class="form-control "
+						placeholder="Ex: matematica, portugues"
+						th:field="${duvida.categoria}" />
+
+
+
+
+					<!-- <select class="form-control" id="design-imput-genero-add-question">
+						<option selected="">Selecione...</option>
+						<option>Matemática</option>
+						<option>Português</option>
+						<option>História</option>
+						<option>Geografia</option>
+						<option>Física</option>
+						<option>Química</option>
+						<option>Inglês</option>
+					</select>
+					 -->
+				</div>
+
+			</div>
+
+			<hr>
+
+
+			<div class="row">
+				<div class="col-4">
+					<h2 id="text-title-add-question">Descriçao:</h2>
+				</div>
+				<div class="col-8">
+
+
+					<input class="form-control mt-0" type="text"
+						id="design-imput-descricao-add-question"
+						placeholder="Caso nescessario, adicione mais informaçoes"
+						th:field="${duvida.descricao}" />
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+		<div class="form-group mt-4 col-10 text-center">
+			<button type="submit" class="btn btn-outline-secondary btn-block">Adicionar Questoes
+				</button>
+
+		</div>
+		</form>
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

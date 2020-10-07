@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Professor</title>
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<div id="layoutAuthentication">
+			<div id="layoutAuthentication_content">
+				<hr>
+				<main>
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-7">
+								<div class="card shadow-lg border-dark rounded-lg mt-2">
+									<div class="card-header mt-0">
+										<h3 class="text-center font-weight-dark mt-0">Olá
+							                 professor(a)!</h3>
+										<h6 class="text-center font-weight-dark mt-0">Nós ajude preenchendo mais algumas 
+										informaçoes para trazer confiabilidade a comunidade.
+											</h6>
+									</div>
+									<div class="card-body">
+										<form>
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-0" for="inputFirstName">Formação</label>
+													</div>
+													<div class="input-group mb-5">
+														<select class="custom-select" id="inputGroupSelect01">
+															<option value="1">Ensino Profissionalizante</option>
+															<option value="2">Ensino Superior Incompleto</option>
+															<option value="3">Ensino Superior Completo</option>
+															<option value="4">Ensino Medio Completo</option>
+															<option value="5">Mestrado</option>
+															<option value="6">Doutorado</option>
+															<option value="7">Especializaçao</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class=" big mb-3" for="inputLastName">Data
+															de Nascimento</label><input class="form-control py-2"
+															id="inputLastName" type="text"
+															placeholder="Ex: 00/00/0000" />
+													</div>
+												</div>
+
+
+											</div>
+
+
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class=" big mb-3" for="inputLastName">Cidade
+														</label><input class="form-control py-2" id="inputLastName"
+															type="text" placeholder="Ex: Pouso Alegre" />
+													</div>
+												</div>
+
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class=" big mb-3" for="inputLastName">UF </label><input
+															class="form-control py-2" id="inputLastName" type="text"
+															placeholder="Ex: MG" />
+													</div>
+												</div>
+											</div>
+
+											<div class="form-row">
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class=" big mb-3" for="inputLastName">Instituição
+															onde Estudou </label><input class="form-control py-2"
+															id="inputLastName" type="text" placeholder="Ex: FAI" />
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label class=" big mb-3" for="inputLastName">Anos
+															de atuação </label><input class="form-control py-2"
+															id="inputLastName" type="text" placeholder="Ex: 4" />
+													</div>
+												</div>
+
+											</div>
+
+
+
+
+										</form>
+									</div>
+									<div class="card-footer text-center">
+										<div class="small">
+											<a th:href="@{/access/login}">Já possui uma conta? Faça o
+												login</a>
+										</div>
+									</div>
+									<div class="progress"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</main>
+
+			</div>
+
+
+		</div>
+		<div class="text-center">
+
+			<a th:href="@{/access/login}" class="btn btn-outline-secondary btn-lg mt-4"
+				role="button" aria-pressed="true" id="btn-pos-register-user-access">Finalizar
+				Cadastro</a>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

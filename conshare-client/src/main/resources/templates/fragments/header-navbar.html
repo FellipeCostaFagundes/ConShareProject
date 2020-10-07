@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>haader-navbar</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+	<nav th:fragment="header"
+		class="sb-topnav navbar navbar-expand navbar-dark ">
+		<a class="navbar-brand " > <img src="/resources/assets/img_home/icon-navbar.png"
+			width="30" height="30" class="d-inline-block align-top" alt=""
+			loading="lazy" > ConShare
+		</a>
+
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item "><a class="nav-link active text-dark"
+					th:href="@{/}">Home <span class="sr-only">(current)</span></a></li>
+
+				<li class="nav-item "><a class="nav-link active text-dark"
+					th:href="@{/access/register_user}">Cadastrar <span
+						class="sr-only">(current)</span></a></li>
+
+				<li class="nav-item "><a class="nav-link active text-dark"
+					th:href="@{/access/login}">Logar <span class="sr-only">(current)</span></a></li>
+
+
+
+			</ul>
+
+		</div>
+	</nav>
+
+
+
+
+
+
+</body>
+</html>

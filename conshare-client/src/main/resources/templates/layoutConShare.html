@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>ConShare</title>
+
+<link href="/resources/assets/img_home/icon-navbar.png" rel="icon">
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/pricing.css" rel="stylesheet">
+<link href="/resources/css/styles.css" rel="stylesheet" />
+<link href="/resources/css/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
+
+<script src="/resources/js/jquery/jquery-3.4.1.min.js"></script>
+<script src="/resources/js/font-awesome/all.min.js"></script>
+
+</head>
+
+
+<body class="sb-nav-fixed">
+
+	<nav class="sb-topnav navbar navbar-expand navbar-dark ">
+		<a class="navbar-brand "> <img
+			src="/resources/assets/img_home/icon-navbar.png" width="30"
+			height="30" class="d-inline-block align-top" alt="" loading="lazy">
+			ConShare
+		</a>
+
+		<form class="navbar-form navbar-center" >
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-danger dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Forum ConShare</button>
+				<div class="dropdown-menu">
+				    <a class="dropdown-item" th:href="@{/question/add_question}">Adicionar Dúvida</a>
+                    <a class="dropdown-item" th:href="@{/question/add_question}">Minhas Dúvidas</a>
+                    <a class="dropdown-item" th:href="@{/question/list_question}">Listar Dúvidas</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" th:href="@{/question/list_question_by_user}">Suas questões</a>
+				</div>
+			</div>
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-danger dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Aulas Online</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" th:href="@{/collaboration/online_teachers}">Professores Online</a> 
+					<a class="dropdown-item" href="#">Calendário de Aulas</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Minhas Conexões</a>
+				</div>
+			</div>
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-danger dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Top Questions</button>
+				<div class="dropdown-menu">					
+					<a class="dropdown-item" th:href="@{/collaboration/frequenty_question}">Dúvidas Frequentes</a> 
+					<a class="dropdown-item" th:href="@{/collaboration/best_rate_question}">Mais avaliadas</a> 
+					<a class="dropdown-item" th:href="@{/collaboration/recomended_doc}">Documentos Recomendados</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Favoritos</a>
+				</div>
+			</div>
+
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-danger dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					SociShare</button>
+				<div class="dropdown-menu">
+				
+					<a class="dropdown-item" th:href="@{/socishare/perfil}">Lista de Amigos</a>	     
+				    <a class="dropdown-item" href="#">Pedidos de amizade<span class="badge">18</span></a>
+				    <a class="dropdown-item" href="#">Mensagens <span class="badge">4</span></a>
+				    
+					<div class="dropdown-divider"></div>
+					
+					<a class="dropdown-item" href="#">Adicionar amigo</a>
+				</div>
+			</div>
+
+		</form>
+
+		<form
+			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+			<ul class="navbar-nav ml-auto ml-md-0">
+				<li class="nav-item dropdown nav-dark"><a
+					class="nav-link dropdown-toggle" id="userDropdown" href="#"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
+				</a>
+					<div class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="userDropdown">
+						<a class="dropdown-item" th:href="@{/not-found}">Perfil</a>
+
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/collaboration/bug_report}">Relatar Bug</a>
+
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/collaboration/send_feedback}">Feedback</a>
+
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/access/login}">Sair</a>
+
+					</div></li>
+			</ul>
+		</form>
+
+
+	</nav>
+
+
+
+
+	<main>
+
+		<div layout:fragment="body"></div>
+
+	</main>
+
+
+	<!-- inicio do FOOTER -->
+	<div th:replace="fragments/footer :: footer"></div>
+	<!-- fim do FOOTER -->
+
+
+
+	<script src="/resources/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="/resources/js/scripts.js"></script>
+	<script src="/resources/js/datatable/jquery.dataTables.min.js"></script>
+	<script src="/resources/css/datatable/dataTables.bootstrap4.min.js"></script>
+	<script src="/resources/assets/demo/datatables-init.js"></script>
+</body>
+
+</html>
