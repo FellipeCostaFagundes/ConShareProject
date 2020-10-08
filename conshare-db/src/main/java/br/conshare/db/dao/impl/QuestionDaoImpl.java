@@ -16,6 +16,8 @@ import br.conshare.model.entities.Duvida;
 
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
+	
+	public static Long USUARIO_ID = Long.valueOf(1);
 
 	public List<Duvida> readAll() {
 		
@@ -119,9 +121,11 @@ public class QuestionDaoImpl implements QuestionDao {
 			
 			if (resultSet.next()) {
 				questions = new Duvida();
+				questions.setId(resultSet.getLong("id"));
 				questions.setTitulo(resultSet.getString("titulo"));
 				questions.setCategoria(resultSet.getString("categoria"));
 				questions.setDescricao(resultSet.getString("descricao"));
+				
 			}
 			
 			
@@ -137,10 +141,12 @@ public class QuestionDaoImpl implements QuestionDao {
 
 	public boolean update(Duvida entity) {
 		
+		entity.setUsuarioId(USUARIO_ID);
+		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		String sql = "UPDATE duvida SET titulo = ?, categoria = ? , descricao = ?";
+		String sql = "UPDATE duvida SET titulo = ?, categoria = ? , descricao = ? ";
 		sql += "WHERE id = ?; ";
 		
 		try {
@@ -151,6 +157,8 @@ public class QuestionDaoImpl implements QuestionDao {
 			preparedStatement.setString(1, entity.getTitulo());
 			preparedStatement.setString(2, entity.getCategoria());
 			preparedStatement.setString(3, entity.getDescricao());
+			preparedStatement.setLong(4, entity.getId());
+			
 			
 			preparedStatement.execute();
 			connection.commit();

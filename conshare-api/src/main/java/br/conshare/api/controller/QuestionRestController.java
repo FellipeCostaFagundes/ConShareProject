@@ -59,6 +59,8 @@ public class QuestionRestController {
 	@PutMapping("/update")
 	public ResponseEntity<Boolean> update(@RequestBody Duvida entity) {
 		
+		entity.setUsuarioId(USUARIO_ID);
+		
 		boolean response = questionService.update(entity);
 		
 		return ResponseEntity.ok(response);

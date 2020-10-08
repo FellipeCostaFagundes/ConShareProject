@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout}">
+<html layout:decorate="~{layoutConShare}">
 <head>
 <meta charset="UTF-8">
 <title>Editar Questoes</title>
@@ -7,85 +7,82 @@
 </head>
 <body>
 
-<div layout:fragment="body">
+	<div layout:fragment="body">
 
-<h1 id="titlepagescollavoration">Editar Perguntas</h1>
+		<h1 id="titlepagescollavoration">Editar Perguntas</h1>
 
-		
+			<form th:action="@{/question/update}" method="POST"
+				th:object="${questions}">
 
-		<div class="border border-white mt-4" >
-		
-					<form th:action="@{/question/update}" method="POST"
-				th:object="${duvida}">
-
-			<div class="row">
-				<div class="col-4">
-					<h2 id="text-title-add-question">Titulo</h2>
-				</div>
-				<div class="col-8">
+		<div class="border border-white mt-4">
 
 
-					<input type="text" id="design-imput-add-question"
-						class="form-control text-white"
-						placeholder="Ex: Como fazer dividir numeros com vírgula" th:field="${duvida.titulo}" />
 
-				</div>
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Titulo</h2>
+					</div>
+					<div class="col-8">
 
-			</div>
 
-			<hr>
+						<input type="text" id="design-imput-add-question"
+							class="form-control text-white"
+							placeholder="Ex: Como fazer dividir numeros com vírgula" th:field="${questions.titulo}" />
 
-			<div class="row">
-				<div class="col-4">
-					<h2 id="text-title-add-question">Genero</h2>
-				</div>
-				<div class="col-8">
-
-					<input type="text" id="design-imput-add-question"
-						class="form-control text-white" placeholder="Ex: Matematica, Portugues" th:field="${duvida.categoria}" />
+					</div>
 
 				</div>
 
-			</div>
+				<hr>
 
-			<hr>
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Genero</h2>
+					</div>
+					<div class="col-8">
 
+						<input type="text" id="design-imput-add-question"
+							class="form-control text-white"
+							placeholder="Ex: Matematica, Portugues" th:field="${questions.categoria}"/>
 
+					</div>
 
-			<div class="row">
-				<div class="col-4">
-					<h2 id="text-title-add-question">Descriçao</h2>
-				</div>
-				<div class="col-8">
-
-
-					<input class="form-control mt-0 text-white" type="text"
-						id="design-imput-descricao-add-question"
-						placeholder="Caso nescessario, adicione mais informaçoes" th:field="${duvida.descricao}"/>
 				</div>
 
+				<hr>
 
 
-			</div>
 
-			
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Descriçao</h2>
+					</div>
+					<div class="col-8">
 
+
+						<input class="form-control mt-0 text-white" type="text"
+							id="design-imput-descricao-add-question"
+							placeholder="Caso nescessario, adicione mais informaçoes" th:field="${questions.descricao}"/>
+					</div>
+
+
+
+				</div>
 		</div>
 
 		<div class="text-center">
-		
-									<button class="btn btn-primary col-12" type="submit">Atualizar</button>
 
-							<input type="hidden" th:field="${questions.id}">
+			<button class="btn btn-primary col-12" type="submit">Atualizar</button>
 
+			<input type="hidden" th:field="${questions.id}">
 
 
 		</div>
-		
+
 		</form>
 
 
-</div>
+	</div>
 
 </body>
 </html>
