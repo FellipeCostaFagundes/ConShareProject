@@ -42,9 +42,7 @@
 
 						</div>
 						<div class="col-2">
-							<a href="modal" class="btn btn-outline-danger btn-lg mt-2"
-								role="button" data-toggle="modal" data-target="#exampleModal"
-								aria-pressed="true">Respostas</a> 
+							<a class="btn btn-outline-danger btn-lg mt-2" th:href="@{/answer/list_answer}" >Respostas</a> 
 								
 								<a
 								  th:href="@{/question/detail-question/{id} (id=${questions.id})}"
@@ -58,39 +56,6 @@
 				</div>
 			</div>
 
-		</div>
-
-
-
-
-		<!-- Modal -->
-		<div class="modal fade " id="exampleModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div
-				class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
-				<div class="modal-content  modal-xl">
-
-					<div class="modal-body modal-dialog modal-dialog-scrollable">
-
-						<div th:each="question : ${questions}">
-
-							<h5 th:text="*{question.titulo}" id="title-card-listquestion"
-								class="card-title">Titulo ref</h5>
-
-							<p th:text="*{question.descricao}" class="card-text">Some
-								quick example text to build on the card title and make up the
-								bulk of the card's content.</p>
-
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Adicionar
-							Resposta</button>
-					</div>
-				</div>
-			</div>
 		</div>
 
 

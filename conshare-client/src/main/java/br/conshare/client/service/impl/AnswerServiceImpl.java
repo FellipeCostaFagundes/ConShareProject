@@ -42,9 +42,26 @@ public class AnswerServiceImpl implements AnswerService {
 	}
 
 	@Override
-	public boolean create(Respostas entity) {
+	public Long create(Respostas entity) {
+		
+		Long id = Long.valueOf(0);
+		String endpoint = "http://localhost:8085/api/v1/answer/create";
 
-		return false;
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		try {
+			HttpEntity<Respostas> httpEntity = new HttpEntity<Respostas>(entity);
+			ResponseEntity<String> requestResponse = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity,String.class );
+			
+			String response = requestResponse.getBody();
+			id = Long.parseLong(response);
+			
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			
+		}
+		return id;
 	}
 
 	@Override

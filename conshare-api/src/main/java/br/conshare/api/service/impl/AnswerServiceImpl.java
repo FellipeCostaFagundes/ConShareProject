@@ -22,7 +22,7 @@ public class AnswerServiceImpl implements AnswerService{
 	}
 
 	@Override
-	public boolean create(Respostas entity) {
+	public Long create(Respostas entity) {
 		
 		return answerDao.create(entity);
 	}

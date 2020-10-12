@@ -8,7 +8,7 @@ public interface AnswerService {
 
 	List<Respostas> readAll();
 
-	boolean create(Respostas entity);
+	Long create(Respostas entity);
 
 	Respostas readById(Long id);
 

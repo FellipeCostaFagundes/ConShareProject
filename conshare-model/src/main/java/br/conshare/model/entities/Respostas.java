@@ -8,6 +8,9 @@ public class Respostas extends BasePojo{
 	private long usuario_id;
 	private Timestamp data_hora;
 	private String texto;
+	
+	
+	
 	public long getDuvida_id() {
 		return duvida_id;
 	}

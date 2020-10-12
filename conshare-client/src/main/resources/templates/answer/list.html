@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Respostas</title>
+</head>
+<body>
+	<div layout:fragment="body">
+
+
+
+
+
+		<img src="https://bootdey.com/img/Content/user_1.jpg" alt=""
+			class="img-circle"> </a>
+		<div class="media-body">
+			<span class="text-muted float-right"> <small
+				class="text-muted">30 min atrás</small>
+			</span> <strong class="text-success">@Tiburssinho</strong>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+				ipsum dolor sit amet.</p>
+		</div>
+		</li>
+		<li class="media"><a href="#" class="float-left"> <img
+				src="https://bootdey.com/img/Content/user_2.jpg" alt=""
+				class="img-circle">
+		</a>
+			<div class="media-body">
+				<span class="text-muted float-right"> <small
+					class="text-muted">30 min ago</small>
+				</span> <strong class="text-success">@Barizon</strong>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Lorem ipsum dolor adipiscing elit.</p>
+			</div></li>
+		<li class="media"><a href="#" class="float-left"> <img
+				src="https://bootdey.com/img/Content/user_3.jpg" alt=""
+				class="img-circle">
+		</a>
+			<div class="media-body">
+				<span class="text-muted float-right"> <small
+					class="text-muted">30 min atrás</small>
+				</span> <strong class="text-success">@Aroldo</strong>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div></li>
+		</ul>
+
+
+		<form th:action="@{/answer/create}" method="POST"
+			th:object="${respostas}">
+			
+			  <textarea class="form-control" placeholder="Escreva sua respostas!"
+				rows="3" th:field="${respostas.texto}"></textarea>
+				
+				
+
+			<button type="submit" class="btn btn-info float-right">Adicionar
+				Pergunta</button>
+		</form>
+
+	</div>
+
+
+</body>
+</html>

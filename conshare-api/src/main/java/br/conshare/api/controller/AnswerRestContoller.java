@@ -23,8 +23,13 @@ import br.conshare.model.entities.Respostas;
 @CrossOrigin(origins = "*")
 public class AnswerRestContoller {
 	
+	
+	
 	@Autowired
 	private AnswerService answerService;
+	
+	public static Long USUARIO_ID = Long.valueOf(1);
+	public static Long DUVIDA_ID = Long.valueOf(2);
 	
 	@GetMapping ("/read-all")
 	public ResponseEntity<List<Respostas>> readAll(){
@@ -61,15 +66,28 @@ public class AnswerRestContoller {
 	
 	@PutMapping("/update")
 	public ResponseEntity <Boolean> update(@RequestBody Respostas entity) {
+		entity.setUsuario_id(USUARIO_ID);
+		
 		boolean response = answerService.update(entity);
 		return ResponseEntity.ok(response);
 		
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity <Boolean> create(@RequestBody Respostas entity){
-		boolean response = answerService.create(entity);
-		return ResponseEntity.ok(response);
+	public ResponseEntity <Long> create(@RequestBody Respostas entity){
+		
+		entity.setUsuario_id(USUARIO_ID);
+		entity.setDuvida_id(DUVIDA_ID);
+		
+		Long id = answerService.create(entity);
+		
+		if(id == 0) {
+			return ResponseEntity.badRequest().build();
+		}
+		
+		return ResponseEntity.ok(id);
+		
+
 	}
 	
 	@DeleteMapping("/delete/{id}")

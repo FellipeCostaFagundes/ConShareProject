@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.conshare.client.service.QuestionService;
 import br.conshare.model.entities.Duvida;
 
-
-
-
-
-
 @Controller
 @RequestMapping("/question")
 public class QuestionController {

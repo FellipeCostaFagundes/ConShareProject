@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,9 @@ import br.conshare.model.entities.Respostas;
 
 @Repository
 public class AnswerDaoImpl implements AnswerDao {
+	
+	public static Long USUARIO_ID = Long.valueOf(1);
+	public static Long DUVIDA_ID = Long.valueOf(2);
 
 	@Override
 	public List<Respostas> readAll() {
@@ -55,28 +60,38 @@ public class AnswerDaoImpl implements AnswerDao {
 	}
 
 	@Override
-	public boolean create(Respostas entity) {
+	public Long create(Respostas entity) {
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
 		
-		String sql = "INSERT INTO resposta_duvida(data_hora, texto";
-		sql += "VALUES(?, ?);";
+		String sql = "INSERT INTO resposta_duvida(duvida_id, usuario_id, texto";
+		sql += "VALUES(?, ?, ?, ?);";
+		
+		Long id = Long.valueOf(0);
 		
 		try {
 			connection = ConnectionFactory.getConnection();
 			connection.setAutoCommit(false);
 			
-			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			
-			preparedStatement.setTimestamp(1, entity.getData_hora());
-			preparedStatement.setString(2, entity.getTexto());
+			preparedStatement.setLong(1, entity.getDuvida_id());
+			preparedStatement.setLong(2, entity.getUsuario_id());
+			//preparedStatement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+			preparedStatement.setString(4, entity.getTexto());
 	
 			
 			preparedStatement.execute();
+			resultSet = preparedStatement.getGeneratedKeys();
+			if(resultSet.next()) {
+				id = resultSet.getLong(1);
+				
+			}
 			connection.commit();
 			
-			return true;
+			return id;
 			
 		} catch (Exception e) {
 			
@@ -87,10 +102,10 @@ public class AnswerDaoImpl implements AnswerDao {
 				e1.printStackTrace();
 			}
 			
-			return false;
+			return id;
 			
 		} finally {
-			ConnectionFactory.close(preparedStatement, connection);
+			ConnectionFactory.close(resultSet,preparedStatement, connection);
 			
 		}
 		
