@@ -8,7 +8,7 @@ public interface UserService {
 	
 	List<Usuario> readAll();
 	
-	boolean create(Usuario entity);
+	Long create(Usuario entity);
 	
 	Usuario readById (Long id);
 	

@@ -22,12 +22,10 @@ import br.conshare.model.entities.Usuario;
 @CrossOrigin(origins = "*")
 public class UserRestController {
 	
-	
 	@Autowired
 	private UserService userService;
 	
-	
-
+	public static Long ID = Long.valueOf(1);
 	
 	@GetMapping ("/read-all")
 	public ResponseEntity<List<Usuario>> readAll(){
@@ -67,9 +65,17 @@ public class UserRestController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity <Boolean> create(@RequestBody Usuario entity){
-		boolean response = userService.create(entity);
-		return ResponseEntity.ok(response);
+	public ResponseEntity <Long> create(@RequestBody Usuario entity){
+		
+		//entity.setId(ID);
+
+		Long id = userService.create(entity);
+
+		if (id == 0) {
+			return ResponseEntity.badRequest().build();
+		}
+
+		return ResponseEntity.ok(id);
 	}
 	
 	@DeleteMapping("/delete/{id}")
