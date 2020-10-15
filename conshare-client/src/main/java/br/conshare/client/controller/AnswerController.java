@@ -1,5 +1,8 @@
 package br.conshare.client.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.conshare.client.service.AnswerService;
+import br.conshare.model.entities.Duvida;
 import br.conshare.model.entities.Respostas;
 
 @Controller
@@ -21,7 +25,7 @@ public class AnswerController {
 	
 	@GetMapping("/list_answer")
 	public String getListQuestionPage(Respostas answers, Model model) {
-	
+		
 		return "answer/list";
 	}
 	
@@ -29,6 +33,8 @@ public class AnswerController {
 	
 	@PostMapping("/create")
 	public String create(Respostas answers, Model model) {
+		
+	
 		
 		Long id = answerService.create(answers);
 		
@@ -39,7 +45,7 @@ public class AnswerController {
 		answers.setId(id);
 		model.addAttribute("answers", answers);
 		
-		return null;
+		return "answer/list";
 		
 	}
 

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import br.conshare.client.service.AnswerService;
-import br.conshare.model.entities.Duvida;
 import br.conshare.model.entities.Respostas;
 
 @Service
@@ -52,10 +51,10 @@ public class AnswerServiceImpl implements AnswerService {
 		
 		try {
 			HttpEntity<Respostas> httpEntity = new HttpEntity<Respostas>(entity);
-			ResponseEntity<String> requestResponse = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity,String.class );
 			
-			String response = requestResponse.getBody();
-			id = Long.parseLong(response);
+			ResponseEntity<Long> requestResponse = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity, Long.class);
+			
+			id = requestResponse.getBody();
 			
 		} catch(Exception e) {
 			System.out.println(e.getMessage());

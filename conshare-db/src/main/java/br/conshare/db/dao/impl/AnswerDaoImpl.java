@@ -66,8 +66,8 @@ public class AnswerDaoImpl implements AnswerDao {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		
-		String sql = "INSERT INTO resposta_duvida(duvida_id, usuario_id, texto";
-		sql += "VALUES(?, ?, ?, ?);";
+		String sql = "INSERT INTO resposta_duvida(duvida_id, usuario_id, data_hora, texto)" ;
+		sql += " VALUES(?, ?, ?, ?);";
 		
 		Long id = Long.valueOf(0);
 		
@@ -79,12 +79,13 @@ public class AnswerDaoImpl implements AnswerDao {
 			
 			preparedStatement.setLong(1, entity.getDuvida_id());
 			preparedStatement.setLong(2, entity.getUsuario_id());
-			//preparedStatement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+			preparedStatement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
 			preparedStatement.setString(4, entity.getTexto());
-	
 			
+	
 			preparedStatement.execute();
 			resultSet = preparedStatement.getGeneratedKeys();
+			
 			if(resultSet.next()) {
 				id = resultSet.getLong(1);
 				
@@ -95,6 +96,7 @@ public class AnswerDaoImpl implements AnswerDao {
 			
 		} catch (Exception e) {
 			
+			System.out.println(e.getMessage());
 			try {
 				connection.rollback();
 			} catch (SQLException e1) {

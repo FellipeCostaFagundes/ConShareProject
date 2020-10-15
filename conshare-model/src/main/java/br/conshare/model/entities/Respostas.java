@@ -2,13 +2,13 @@ package br.conshare.model.entities;
 
 import java.sql.Timestamp;
 
+
 public class Respostas extends BasePojo{
 	
 	private long duvida_id;
 	private long usuario_id;
 	private Timestamp data_hora;
 	private String texto;
-	
 	
 	
 	public long getDuvida_id() {
@@ -40,6 +40,10 @@ public class Respostas extends BasePojo{
 		return "Respostas [duvida_id=" + duvida_id + ", usuario_id=" + usuario_id + ", data_hora=" + data_hora
 				+ ", texto=" + texto + "]";
 	}
+	
+	
+	
+	
 	
 	
 

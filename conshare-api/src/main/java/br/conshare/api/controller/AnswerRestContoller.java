@@ -1,5 +1,10 @@
 package br.conshare.api.controller;
 
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +33,14 @@ public class AnswerRestContoller {
 	@Autowired
 	private AnswerService answerService;
 	
-	public static Long USUARIO_ID = Long.valueOf(1);
-	public static Long DUVIDA_ID = Long.valueOf(2);
+	public static Long USUARIO_ID = Long.valueOf(2);
+	public static Long DUVIDA_ID = Long.valueOf(3);
+	
+	
+
 	
 	@GetMapping ("/read-all")
 	public ResponseEntity<List<Respostas>> readAll(){
-		
-		Long usuarioId = QuestionRestController.USUARIO_ID;
-		
-		
 		
 		List<Respostas> respostas = answerService.readAll();
 		
@@ -74,20 +78,26 @@ public class AnswerRestContoller {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity <Long> create(@RequestBody Respostas entity){
+	public ResponseEntity<Long> create(@RequestBody Respostas entity){
 		
-		entity.setUsuario_id(USUARIO_ID);
-		entity.setDuvida_id(DUVIDA_ID);
-		
-		Long id = answerService.create(entity);
-		
-		if(id == 0) {
+		try {
+			
+			entity.setUsuario_id(USUARIO_ID);
+			entity.setDuvida_id(DUVIDA_ID);
+			//entity.setData_hora(new Timestamp(System.currentTimeMillis()));
+			
+			
+			Long id = answerService.create(entity);
+			
+			if(id == 0) {
+				return ResponseEntity.badRequest().build();
+			}
+			
+			return ResponseEntity.ok(id);
+		} catch (Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
 		
-		return ResponseEntity.ok(id);
-		
-
 	}
 	
 	@DeleteMapping("/delete/{id}")
