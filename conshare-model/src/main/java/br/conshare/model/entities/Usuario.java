@@ -28,11 +28,11 @@ public class Usuario extends BasePojo{
 	public void setAno_nascimento(Timestamp ano_nascimento) {
 		this.ano_nascimento = ano_nascimento;
 	}
-	public String getNick_name() {
-		return nick_name;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setNick_name(String nick_name) {
-		this.nick_name = nick_name;
+	public void setNickname(String nick_name) {
+		this.nickname = nick_name;
 	}
 	public String getSenha() {
 		return senha;
@@ -46,12 +46,7 @@ public class Usuario extends BasePojo{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getFormacao_academica() {
-		return formacao_academica;
-	}
-	public void setFormacao_academica(String formacao_academica) {
-		this.formacao_academica = formacao_academica;
-	}
+	
 	public boolean isVerificacao() {
 		return verificacao;
 	}
@@ -70,23 +65,53 @@ public class Usuario extends BasePojo{
 	public void setFormacao(String formacao) {
 		this.formacao = formacao;
 	}
+	
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [email=" + email + ", cpf=" + cpf + ", nome=" + nome + ", ano_nascimento=" + ano_nascimento
-				+ ", nick_name=" + nick_name + ", senha=" + senha + ", tipo=" + tipo + ", formacao_academica="
-				+ formacao_academica + ", verificacao=" + verificacao + ", interesses_de_pesquisa="
-				+ interesses_de_pesquisa + ", formacao=" + formacao + "]";
+				+ ", nick_name=" + nickname + ", senha=" + senha + ", tipo=" + tipo + ", verificacao=" + verificacao + ", interesses_de_pesquisa="
+				+ interesses_de_pesquisa + ", formacao=" + formacao + ", descricao=" + descricao +", celular=" + celular + ", sobrenome= " + sobrenome + "]";
 	}
-	private String email;
-	private String cpf;
+	
 	private String nome;
-	private Timestamp ano_nascimento;
-	private String nick_name;
+	private String sobrenome;
 	private String senha;
+	private String email;
+	private String celular;
+	private String cpf;
 	private String tipo;
-	private String formacao_academica;
+	private String nickname;
+	private Timestamp ano_nascimento;
+	private String descricao;
+	private String formacao;
 	private boolean verificacao;
 	private String interesses_de_pesquisa;
-	private String formacao;
+	
+	
+	
+	
+    
+	
+	
 
 }

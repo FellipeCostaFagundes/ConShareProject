@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean create(Usuario entity) {
+	public Long create(Usuario entity) {
 		
 		return userDao.create(entity);
 	}

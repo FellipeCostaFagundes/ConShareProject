@@ -1,10 +1,6 @@
 package br.conshare.api.controller;
 
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +29,8 @@ public class AnswerRestContoller {
 	@Autowired
 	private AnswerService answerService;
 	
-	public static Long USUARIO_ID = Long.valueOf(2);
-	public static Long DUVIDA_ID = Long.valueOf(3);
+	public static Long USUARIO_ID = Long.valueOf(1);
+	public static Long DUVIDA_ID = Long.valueOf(8);
 	
 	
 
@@ -84,7 +80,7 @@ public class AnswerRestContoller {
 			
 			entity.setUsuario_id(USUARIO_ID);
 			entity.setDuvida_id(DUVIDA_ID);
-			//entity.setData_hora(new Timestamp(System.currentTimeMillis()));
+			
 			
 			
 			Long id = answerService.create(entity);

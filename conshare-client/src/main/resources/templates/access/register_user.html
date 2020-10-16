@@ -24,35 +24,46 @@
 
 									</div>
 									<div class="card-body">
-										<form>
+										<form th:action="@{/access/create}" method="POST"
+											th:object="${usuario}">
 											<div class="form-row">
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="big mb-2" for="inputFirstName">Nome</label><input
 															class="form-control py-4" id="inputFirstName" type="text"
-															placeholder="Insira seu nome" />
+															placeholder="Insira seu nome" th:field="${usuario.nome}" />
 													</div>
+													
 												</div>
+												
 												<div class="col-md-8">
 													<div class="form-group">
 														<label class="big mb-2" for="inputLastName">Sobrenome</label><input
 															class="form-control py-4" id="inputLastName" type="text"
-															placeholder="Insira o seu sobrenome" />
+															placeholder="Insira o seu sobrenome"
+															th:field="${usuario.sobrenome}" />
 													</div>
 												</div>
-											</div>
+											</div> 
+											
+											
+											  
 											<div class="form-group">
 												<label class="big mb-2" for="inputEmailAddress">Email</label><input
 													class="form-control py-4" id="inputEmailAddress"
 													type="email" aria-describedby="emailHelp"
-													placeholder="Insira o endereço de email" />
+													placeholder="Insira o endereço de email"
+													th:field="${usuario.email}" />
 											</div>
+											
+											  
 											<div class="form-row">
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="big mb-2" for="inputPassword">Senha</label><input
 															class="form-control py-4" id="inputPassword"
-															type="password" placeholder="Insira a senha" />
+															type="password" placeholder="Insira a senha"
+															th:field="${usuario.senha}" />
 													</div>
 												</div>
 												<div class="col-md-6">
@@ -64,6 +75,80 @@
 													</div>
 												</div>
 											</div>
+											
+											
+											<div class="form-row">
+												<div class="col-md-5">
+													<div class="form-group">
+														<label class="big mb-2" for="inputCell">Celular</label><input
+															class="form-control py-4" id="inputCell" type="text"
+															placeholder="Insira seu celular"
+															th:field="${usuario.celular}" />
+													</div>
+												</div>
+												<div class="col-md-5">
+													<div class="form-group">
+														<label class="big mb-2" for="inputCpf">Cpf</label><input
+															class="form-control py-4" id="inputCpf" type="text"
+															placeholder="Insira o seu cpf" th:field="${usuario.cpf}" />
+													</div>
+												</div>
+											</div> 
+											
+											
+											
+											
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputNasc">Data de
+															Nascimento</label><input class="form-control py-4" id="inputNasc"
+															type="text" placeholder="Insira sua data de nasc"
+															/>
+													</div>
+												</div>
+												<div class="form-group">
+												<label for="exampleFormControlTextarea1">Você é um:</label>
+												<div class="input-group mb-6">
+													<select class="custom-select" id="inputGroupSelect01">
+														<option value="professor">Professor</option>
+														<option value="aluno">Aluno</option>
+													
+													</select>
+												</div>
+												</div>
+
+											</div>
+											
+											
+											
+											<div class="col-md-20">
+													<div class="form-group">
+														<label class="big mb-2" for="inputFormac">Formação</label>
+														<input class="form-control py-4" id="inputFormac"
+															type="text" placeholder="Insira o que você busca aqui"
+															th:field="${usuario.formacao}" />
+													</div>
+												</div>
+												
+												
+											
+											<div class="col-md-20">
+													<div class="form-group">
+														<label class="big mb-2" for="inputIntent">Intenções de pesquisa</label>
+														<input class="form-control py-4" id="inputIntent"
+															type="text" placeholder="Insira o que você busca aqui"
+															th:field="${usuario.interesses_de_pesquisa}" />
+													</div>
+												</div>
+
+
+
+
+											<button type="submit"
+												class="btn btn-outline-secondary btn-block">Criar
+												Conta</button>
+
 										</form>
 									</div>
 									<div class="card-footer text-center">
@@ -80,41 +165,6 @@
 
 				</main>
 
-			</div>
-
-
-		</div>
-
-		<div class="text-center">
-			<a href="modal" class="btn btn-outline-secondary btn-lg mt-4"
-				role="button" data-toggle="modal" data-target="#modal"
-				aria-pressed="true" id="btn-pos-register-user-access">Avançar</a>
-
-
-
-			<div class="modal" tabindex="-1" id="modal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title text-center" id = "modal-title">Escolha uma Opção</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<a th:href="@{/access/register_teacher}"
-								class="btn btn-outline-secondary btn-lg mt-4" role="button"
-								aria-pressed="true" id="btn-pos-register-user-access">Eu sou
-								um professor</a> <a th:href="@{/access/register_student}"
-								class="btn btn-outline-secondary btn-lg mt-4" role="button"
-								aria-pressed="true" id="btn-pos-register-user-access">Eu sou
-								um aluno</a>
-
-						</div>
-
-					</div>
-				</div>
 			</div>
 
 

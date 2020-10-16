@@ -1,6 +1,7 @@
 package br.conshare.client.service.impl;
 
 import java.util.Arrays;
+
 import java.util.List;
 
 import org.springframework.http.HttpEntity;
@@ -28,7 +29,7 @@ public class UserServiceImpl implements UserService {
 		RestTemplate restTemplate  = new RestTemplate();
 		
 		try {
-			HttpEntity<String> requestEntity = new HttpEntity<>("");
+			HttpEntity<String> requestEntity = new HttpEntity<String>("");
 			ResponseEntity<Usuario[]> requestResponse = restTemplate.exchange(endpoint, HttpMethod.GET, requestEntity, Usuario[].class);
 			
 			Usuario[] users = requestResponse.getBody();
@@ -43,13 +44,34 @@ public class UserServiceImpl implements UserService {
 		
 		return response;
 		
-
 	}
 
 	@Override
-	public boolean create(Usuario entity) {
+	public Long create(Usuario entity) {
 		
-		return false;
+		Long id = Long.valueOf(1);
+		
+		String endpoint = "http://localhost:8085/api/v1/user/create";
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		try {
+			
+			HttpEntity<Usuario> httpEntity = new HttpEntity<Usuario>(entity);
+			
+			ResponseEntity<Long> requestResponse = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity, Long.class);
+			
+	
+			id = requestResponse.getBody();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+		}
+		
+		
+		return id;
 	}
 
 	@Override
@@ -64,7 +86,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			
 			
-			HttpEntity<String> requestEntity = new HttpEntity<>("");
+			HttpEntity<String> requestEntity = new HttpEntity<String>("");
 			ResponseEntity<Usuario> requestResponse = restTemplate.exchange(endpoint, HttpMethod.GET, requestEntity, Usuario.class);
 			
 			response = requestResponse.getBody();
@@ -74,8 +96,7 @@ public class UserServiceImpl implements UserService {
 		}
 		
 	
-		return null;
-		
+		return response;
 		
 		
 	}

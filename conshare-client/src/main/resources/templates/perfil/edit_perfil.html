@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Listar questoes</title>
+
+<link href="/resources/assets/img_home/icon-navbar.png" rel="icon">
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/pricing.css" rel="stylesheet">
+<link href="/resources/css/styles.css" rel="stylesheet" />
+<link href="/resources/css/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
+
+<script src="/resources/js/jquery/jquery-3.4.1.min.js"></script>
+<script src="/resources/js/font-awesome/all.min.js"></script>
+
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+		<link
+			href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css"
+			rel="stylesheet" media="screen">
+		<div class="container">
+			<div class="row user-menu-container square">
+				<div class="col-md-7 user-details">
+					<div class="row coralbg white">
+						<div class="col-md-6 no-pad">
+							<div class="user-pad">
+								<h3>
+									<b>Bem vindo ao seu perfil, Fellipe!</b>
+								</h3>
+								<h4 class="white">
+									<i class="fa fa-check-circle-o"></i> Pouso Alegre, MG.
+								</h4>
+								<h4 class="white">
+									<i class="fa fa-twitter"></i> @Felps
+								</h4>
+								<h4 class="white">
+									<i class="fa fa-twitter"></i> Aluno
+								</h4>
+								<button type="button" class="btn btn-labeled btn-info"
+									th:href="@{/perfil/edit_perfil}">
+									<span class="btn-label"><i class="fa fa-pencil"></i></span>Editar
+									Perfil
+								</button>
+							</div>
+						</div>
+						<div class="col-md-6 no-pad">
+							<div class="user-image">
+								<img
+									src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg"
+									class="img-responsive thumbnail">
+							</div>
+						</div>
+					</div>
+					<div class="row overview">
+						<div class="col-md-4 user-pad text-center">
+							<h3>AMIGOS</h3>
+							<h4>2,784</h4>
+						</div>
+						<div class="col-md-4 user-pad text-center">
+							<h3>REPUTAÇÃO</h3>
+							<h4>456</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1 user-menu-btns">
+					<div class="btn-group-vertical square" id="responsive">
+						<a href="#" class="btn btn-block btn-default active"> <i
+							class="fa fa-bell-o fa-3x"></i>
+						</a> <a href="#" class="btn btn-default"> <i
+							class="fa fa-laptop fa-3x"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
